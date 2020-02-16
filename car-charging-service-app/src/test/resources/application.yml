@@ -1,0 +1,41 @@
+ccs:
+  client:
+    asia:
+      base-url: http://localhost:${server.port}${server.servlet.context-path}
+    europe:
+      base-url: http://localhost:${server.port}${server.servlet.context-path}
+    japan:
+      base-url: http://localhost:${server.port}${server.servlet.context-path}
+    vis:
+      base-url: http://localhost:${server.port}${server.servlet.context-path}
+
+spring:
+  liquibase:
+    change-log: classpath:/sql/changelog/db.changelog-master.yaml
+  datasource:
+    url: jdbc:h2:mem:ccs;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;MODE=PostgreSQL;DATABASE_TO_UPPER=false;INIT=CREATE SCHEMA IF NOT EXISTS ccs\;SET SCHEMA ccs
+    username: sa
+    password:
+    driverClassName: org.h2.Driver
+  test:
+    database:
+      replace: none
+  jpa:
+    hibernate:
+      ddlAuto: none
+    show-sql: true
+server:
+  port: 5050
+  servlet:
+    context-path: /car-charging-service
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 1000000
+        readTimeout: 1000000
+
+logging:
+  level:
+    car-charging-service: info

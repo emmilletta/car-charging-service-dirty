@@ -1,0 +1,64 @@
+databaseChangeLog:
+  - logicalFilePath: changeset-rel_1.0
+  
+  - preConditions:
+                   
+  - changeSet:
+      id: initial_ccs_db_1.0
+      author: emmilletta
+      changes:
+        - sqlFile:
+            encoding: utf8
+            endDelimiter: \n;
+            path: ./install/initial_ccs_db.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            stripComments: true
+
+  - changeSet:
+      id: add_columns_to_user_table_1.0
+      author: emmilletta
+      changes:
+        - sqlFile:
+            encoding: utf8
+            endDelimiter: \n;
+            path: ./install/add_columns_to_user_table.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            stripComments: true
+
+  - changeSet:
+      id: change_columns_types_1.0
+      author: emmilletta
+      changes:
+        - sqlFile:
+            encoding: utf8
+            endDelimiter: \n;
+            path: ./install/change_columns_types.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            stripComments: true
+
+  - changeSet:
+      id: add_test_user_with_car_1.0
+      author: emmilletta
+      changes:
+        - sqlFile:
+            encoding: utf8
+            endDelimiter: \n;
+            path: ./install/add_test_user_with_car.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            stripComments: true
+
+  - changeSet:
+      id: add_test_user_data_1.0
+      author: emmilletta
+      changes:
+        - sqlFile:
+            encoding: utf8
+            endDelimiter: \n;
+            path: ./install/add_test_user_data.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            stripComments: true

@@ -1,0 +1,26 @@
+version: '3.1'
+services:
+#  car-charging-service:
+#    image: tomcat:9.0.20-jdk11
+#    container_name: car-charging-service
+#    environment:
+#      - JPDA_ADDRESS=*:8000                             #for debugging tomcat
+#      - JPDA_TRANSPORT=dt_socket                        #for debugging tomcat
+#    command: /usr/local/tomcat/bin/catalina.sh jpda run #for debugging tomcat
+#    volumes:
+#      - ./car-charging-service-app/target/car-charging-service-1.0.0.war:/usr/local/tomcat/webapps/car-charging-service.war
+#      - ./tomcat-users.xml:/usr/local/tomcat/conf/tomcat-users.xml #access tomcat admin pages
+#      - ./context.xml:/usr/local/tomcat/webapps/manager/META-INF/context.xml #access tomcat admin pages
+#    ports:
+#      - "5010:8080"
+#      - "5011:8000"                                     #for debugging tomcat
+
+  car-charging-service-db:
+    image: postgres:12
+    container_name: car-charging-service-db
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: ccs
+    ports:
+      - "5020:5432"

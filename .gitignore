@@ -1,0 +1,15 @@
+# Generated
+*.class
+
+# Package Files
+*.jar
+*.war
+*.ear
+
+target/
+
+# IntelliJ Idea
+.idea/
+*.iml
+out/
+
