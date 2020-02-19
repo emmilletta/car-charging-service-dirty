@@ -1,6 +1,10 @@
-# Car charging service
+# Repository for "Clean Code" lecture in T-Systems java school
 
-An application to simulate the start of charging electric vehicles. Adapter between different car brands and charging providers
+During the lecture, we will gradually improve the application so that from dirty code we come to clean code
+
+## Description
+
+An application "Car charging service" to simulate the start of charging electric vehicles. Adapter between different car brands and charging providers
 
 ## Tech Stack
 * Java 8
